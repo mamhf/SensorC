@@ -169,6 +169,8 @@ int main(void)
         diep("bind");
     /// END SOCKET PREP ///
 
+
+
     while(1)
     {
         if(firstRun!=0)
@@ -181,6 +183,7 @@ int main(void)
             {
                 diep("sendto()");
             }
+
         }
         else
         {
@@ -211,9 +214,16 @@ int main(void)
                 }
 
             }
+
+
+
+
             printf("\nGOT SOCK2 : %s \n",buf2);
 
+
+
             /// END GET ACTIVATED ////
+
 
         }
     }

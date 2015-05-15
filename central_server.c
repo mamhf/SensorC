@@ -268,14 +268,10 @@ int main()
     ///(2)  END OF SHARED MEMORY PREP ///
 
 
-
-
-
     /// MAIN LOOP ///
     while(1)
     {
         listen(sock,5);
-
 
         /// RECIVE A MESSAGE FROM SENSORS ///
         if (recvfrom(sock, buf, BUFLEN, 0,(struct sockaddr *) &si_other, &slen)==-1)
@@ -295,8 +291,6 @@ int main()
 		sem_post(sem_id);
     		printf("posting \n");
                 printf("RES %s \n",s2);
-
-
             }else{
 		sleep(2);
 		printf("Waiting \n");
@@ -305,9 +299,8 @@ int main()
                 strcpy( s, buf);
 		sem_post(sem_id);
     		printf("posting \n");
-            printf("FINAL %s \n",s);
+            	printf("FINAL %s \n",s);
             }
-
             sleep(1);
             //scanf( "%s" , sen );
             if (sendto(sock, "1", BUFLEN, 0,(struct sockaddr *) &si_other, slen)==-1)
@@ -318,22 +311,9 @@ int main()
             {
                 printf("msg sent \n");
             }
-
-
-
             /// End add port to data ///
         }
-
-
-
-
-
-
     }
-
-
     return 0;
 }
-
-
 

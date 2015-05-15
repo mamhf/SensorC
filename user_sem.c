@@ -156,9 +156,6 @@ struct Sensor *createSensor(char * msg)
 
 /// END SENSOR ///
 
-
-
-
 int main()
 {
     /// SOCKET ONE
@@ -248,7 +245,6 @@ int main()
    	    printf("Waiting \n");
             sem_wait(sem_id);
             printf("Locked, About to sleep \n");
-
             /// GET A SENSOR OBJECT OUT OF A STRING ///
             struct Sensor *mySensor = createSensor(shm);
             printf("%s | %s : %s",mySensor->label,mySensor->ip,mySensor->port);
